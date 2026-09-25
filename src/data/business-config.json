@@ -1,0 +1,31 @@
+{
+  "name": "OmniServ Management",
+  "legalName": "OmniServ Operations LLC",
+  "operatingAs": "OmniServ Operations",
+  "tagline": "Professional Project Management and Operational Services",
+  "description": "We manage, coordinate, and bill professional contracts across technical, digital, and field operations for businesses and property owners.",
+  "phone": "+1 310 566 9744",
+  "phoneRaw": "+13105669744",
+  "email": "info@omniserv.top",
+  "domain": "omniserv.top",
+  "siteUrl": "https://www.omniserv.top",
+  "address": "15233 Ventura Blvd Ste 1020, Sherman Oaks, CA 91403",
+  "streetAddress": "15233 Ventura Blvd Ste 1020",
+  "addressLocality": "Sherman Oaks",
+  "addressRegion": "CA",
+  "postalCode": "91403",
+  "addressCountry": "US",
+  "hours": "Monday - Friday: 8:00 AM - 6:00 PM PST",
+  "theme": {
+    "primary": "#0f766e",
+    "primaryDark": "#115e59",
+    "primaryLight": "#f0fdfa",
+    "secondary": "#0f172a",
+    "secondaryLight": "#1e293b",
+    "accent": "#2563eb",
+    "surface": "#ffffff",
+    "slateBg": "#f8fafc",
+    "textHeading": "#0f172a",
+    "textBody": "#334155"
+  }
+}

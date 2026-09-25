@@ -1,0 +1,129 @@
+---
+import '../styles/globals.css';
+import businessConfig from '../data/business-config.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = `${businessConfig.name} | ${businessConfig.tagline}`,
+  description = businessConfig.description,
+  canonicalUrl = businessConfig.siteUrl,
+} = Astro.props;
+
+const siteUrl = businessConfig.siteUrl;
+
+// Professional Service & Organization Schema
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${siteUrl}/#organization`,
+  "name": businessConfig.name,
+  "legalName": businessConfig.legalName,
+  "alternateName": businessConfig.operatingAs,
+  "description": description,
+  "url": siteUrl,
+  "telephone": businessConfig.phoneRaw,
+  "email": businessConfig.email,
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": businessConfig.streetAddress,
+    "addressLocality": businessConfig.addressLocality,
+    "addressRegion": businessConfig.addressRegion,
+    "postalCode": businessConfig.postalCode,
+    "addressCountry": businessConfig.addressCountry
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Management & Operational Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Operations & Contract Management",
+          "description": "We execute client contracts, coordinate certified subcontractors, and oversee project delivery from start to finish."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Digital & Technical Services",
+          "description": "We deliver web development, online business setups, and technical consulting."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Field & Property Services",
+          "description": "We handle contracts for property maintenance, specialty tree care, and site improvements through authorized service teams."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Centralized Client Billing",
+          "description": "We provide clients with secure online invoicing, automated receipts, and direct customer support for all contracted work."
+        }
+      }
+    ]
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={businessConfig.name} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

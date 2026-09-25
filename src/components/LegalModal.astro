@@ -1,0 +1,229 @@
+---
+import businessConfig from '../data/business-config.json';
+---
+
+<div id="legal-modal" class="legal-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="legal-modal-container">
+    <div class="legal-modal-header">
+      <div class="legal-modal-header-info">
+        <span class="legal-badge">Legal & Compliance Documentation</span>
+        <h3 id="modal-title" class="legal-modal-title">Terms of Service</h3>
+        <p class="legal-modal-subtitle">OmniServ Operations LLC • Updated for {new Date().getFullYear()}</p>
+      </div>
+      <button id="close-modal-btn" class="modal-close-btn" aria-label="Close legal modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Tab navigation inside modal -->
+    <div class="modal-tabs">
+      <button class="modal-tab-btn active" data-policy="terms">Terms of Service</button>
+      <button class="modal-tab-btn" data-policy="privacy">Privacy Policy</button>
+      <button class="modal-tab-btn" data-policy="refund">Refund Policy</button>
+      <button class="modal-tab-btn" data-policy="checkout">Secure Checkout Policy</button>
+    </div>
+
+    <div class="legal-modal-body">
+      <!-- TERMS OF SERVICE -->
+      <div id="policy-content-terms" class="policy-content active">
+        <h4>1. Acceptance of Terms</h4>
+        <p>By engaging OmniServ Operations LLC ("OmniServ Operations", "we", "us", or "our") or using our website ({businessConfig.siteUrl}) and client payment portals, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services or website.</p>
+
+        <h4>2. Description of Operational & Management Services</h4>
+        <p>OmniServ Operations LLC provides professional project management, contract administration, billing coordination, and operational oversight across digital technologies, technical consulting, and field operations. We coordinate certified subcontractors and authorized service teams to deliver work according to agreed scopes of work (SOW) or contractual agreements.</p>
+
+        <h4>3. Invoicing and Payment Terms</h4>
+        <p>Payments for contracted services are due upon receipt of invoice or in accordance with predefined project milestone schedules agreed upon in writing. All payments processed through our online portal are routed through our secure payment gateway provider (Stripe). Clients are responsible for providing valid payment information and timely settlements.</p>
+
+        <h4>4. Independent Contractor Status</h4>
+        <p>Our operational management includes deploying vetted, certified subcontractors and field specialists. OmniServ Operations supervises project timelines, billing compliance, and quality control while maintaining strict regulatory adherence.</p>
+
+        <h4>5. Limitation of Liability</h4>
+        <p>To the maximum extent permitted by applicable law, OmniServ Operations LLC shall not be liable for indirect, incidental, special, consequential, or punitive damages resulting from your use of services or delays outside reasonable control.</p>
+
+        <h4>6. Governing Law & Jurisdiction</h4>
+        <p>These terms shall be governed by and construed in accordance with the laws of the State of California, United States, without regard to conflict of law principles. Any dispute arising under these terms shall be subject to the exclusive jurisdiction of the state and federal courts located in Los Angeles County, California.</p>
+
+        <h4>7. Contact Information</h4>
+        <p>For inquiries regarding these terms, contact:<br />
+        <strong>OmniServ Operations LLC</strong><br />
+        {businessConfig.address}<br />
+        Email: {businessConfig.email} | Phone: {businessConfig.phone}</p>
+      </div>
+
+      <!-- PRIVACY POLICY -->
+      <div id="policy-content-privacy" class="policy-content">
+        <h4>1. Information We Collect</h4>
+        <p>We collect personal information necessary to deliver project management services, process contractual payments, and communicate regarding deliverables. This information may include:</p>
+        <ul>
+          <li><strong>Contact Details:</strong> Full name, corporate email address, telephone number, and physical billing/service address.</li>
+          <li><strong>Project Specifications:</strong> Contract terms, work scopes, and site documentation.</li>
+          <li><strong>Billing Information:</strong> Invoice numbers and transaction amounts. Payment card credentials are transmitted directly to Stripe and are never stored on our web servers.</li>
+        </ul>
+
+        <h4>2. How We Use Information</h4>
+        <p>We utilize collected information solely to:</p>
+        <ul>
+          <li>Administer client contracts, fulfill project milestones, and dispatch service crews.</li>
+          <li>Facilitate secure invoice billing and issue automated transaction receipts via Stripe.</li>
+          <li>Provide customer support and resolve project or invoice inquiries.</li>
+          <li>Comply with applicable legal, accounting, and tax regulations.</li>
+        </ul>
+
+        <h4>3. Data Security & Storage</h4>
+        <p>We maintain strict administrative, technical, and physical safeguards designed to protect personal and transaction data. Transmission of payment data is encrypted using Transport Layer Security (TLS 1.3/256-bit encryption). Payment card processing complies with the Payment Card Industry Data Security Standard (PCI-DSS Level 1).</p>
+
+        <h4>4. Third-Party Sharing</h4>
+        <p>We never sell, rent, or trade your personal information. Information is shared strictly with:</p>
+        <ul>
+          <li><strong>Payment Processors:</strong> Stripe Inc., for payment settlement and fraud mitigation.</li>
+          <li><strong>Authorized Service Providers:</strong> Subcontractors directly involved in fulfilling your project scope.</li>
+          <li><strong>Legal Authorities:</strong> When required by court order, subpoena, or applicable state or federal law.</li>
+        </ul>
+
+        <h4>5. Contact Our Privacy Officer</h4>
+        <p>Inquiries regarding data rights or privacy practices can be sent to <strong>{businessConfig.email}</strong> or mailed to {businessConfig.address}.</p>
+      </div>
+
+      <!-- REFUND POLICY -->
+      <div id="policy-content-refund" class="policy-content">
+        <h4>1. Standard Refund Policy</h4>
+        <p>Because OmniServ Operations LLC coordinates and commits specialized labor, technical resources, and operational expenses upon contract execution:</p>
+        <ul>
+          <li><strong>Completed & Approved Services:</strong> Services already executed, delivered, and approved by the client are strictly non-refundable.</li>
+          <li><strong>Deposit Retainers:</strong> Initial project deposits cover administrative planning, subcontractor reservation, and material allocations. Deposits are non-refundable once work or procurement has commenced.</li>
+          <li><strong>Milestone Disputes:</strong> For milestone disputes or questions concerning specific line items, clients must notify our support team within <strong>seven (7) calendar days</strong> of invoice issuance.</li>
+        </ul>
+
+        <h4>2. Dispute & Resolution Process</h4>
+        <p>If you believe an invoice contains a billing discrepancy or error:</p>
+        <ol>
+          <li>Submit a written notification referencing your Invoice Number to <strong>{businessConfig.email}</strong> within 7 days.</li>
+          <li>Our management team will inspect project work logs, subcontractor deliverables, and time allocations within 3 business days.</li>
+          <li>If an adjustment or credit is warranted, OmniServ Operations will issue a revised statement or process an electronic refund credit directly to the original payment method via Stripe within 5–10 business days.</li>
+        </ol>
+
+        <h4>3. Cancellation Terms</h4>
+        <p>Contract cancellation notices must be submitted in writing prior to scheduled field deployment or digital milestone commencement. Any hours logged or non-recoverable direct vendor expenses incurred prior to cancellation will be billed accordingly.</p>
+      </div>
+
+      <!-- SECURE CHECKOUT POLICY -->
+      <div id="policy-content-checkout" class="policy-content">
+        <h4>1. 256-Bit Secure Payment Gateway</h4>
+        <p>OmniServ Operations LLC partners with <strong>Stripe Inc.</strong>, an industry-leading global payment infrastructure provider, to process all online credit card, debit card, and electronic bank transactions.</p>
+
+        <h4>2. PCI-DSS Level 1 Certification</h4>
+        <p>Our payment gateway operates under the highest security certification in the payments industry: PCI Service Provider Level 1. Payment information is tokenized and transmitted directly to Stripe's secure infrastructure. <strong>Your card number, CVV code, and sensitive bank credentials never touch or reside on our servers.</strong></p>
+
+        <h4>3. Accepted Payment Methods</h4>
+        <p>Through our online payment portal, clients may pay invoices using:</p>
+        <ul>
+          <li>Visa</li>
+          <li>Mastercard</li>
+          <li>American Express</li>
+          <li>Discover</li>
+          <li>Apple Pay & Google Pay (on supported devices)</li>
+          <li>ACH Bank Direct Debit (upon pre-arranged authorization)</li>
+        </ul>
+
+        <h4>4. Transaction Receipts & Confirmation</h4>
+        <p>Upon successful payment completion, an automated digital receipt is generated and emailed immediately to the address specified during checkout. The receipt displays the legal entity name (<strong>{businessConfig.legalName}</strong>), the operating trade name (<strong>{businessConfig.operatingAs}</strong>), your invoice number, and transaction breakdown.</p>
+
+        <h4>5. Billing Support & Assistance</h4>
+        <p>If you require an itemized breakdown, tax W-9 documentation, or assistance with an invoice payment, contact our billing desk directly at <strong>{businessConfig.phone}</strong> or email <strong>{businessConfig.email}</strong>.</p>
+      </div>
+    </div>
+
+    <div class="legal-modal-footer">
+      <div class="modal-footer-contact">
+        <span>Need clarification? Call <a href={`tel:${businessConfig.phoneRaw}`}>{businessConfig.phone}</a></span>
+      </div>
+      <button id="modal-footer-close" class="btn-modal-action">Close Window</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const legalModal = document.getElementById('legal-modal');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+  const modalFooterClose = document.getElementById('modal-footer-close');
+  const modalTabs = document.querySelectorAll('.modal-tab-btn');
+  const modalTitle = document.getElementById('modal-title');
+
+  const tabTitles = {
+    terms: 'Terms of Service',
+    privacy: 'Privacy Policy',
+    refund: 'Refund & Cancellation Policy',
+    checkout: 'Secure Checkout & Payment Security'
+  };
+
+  function openLegalModal(policyKey = 'terms') {
+    if (!legalModal) return;
+    switchTab(policyKey);
+    legalModal.classList.add('is-open');
+    legalModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLegalModal() {
+    if (!legalModal) return;
+    legalModal.classList.remove('is-open');
+    legalModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function switchTab(policyKey) {
+    modalTabs.forEach(btn => {
+      const active = btn.dataset.policy === policyKey;
+      btn.classList.toggle('active', active);
+    });
+
+    document.querySelectorAll('.policy-content').forEach(section => {
+      section.classList.remove('active');
+    });
+
+    const targetSection = document.getElementById(`policy-content-${policyKey}`);
+    if (targetSection) {
+      targetSection.classList.add('active');
+      targetSection.scrollTop = 0;
+    }
+
+    if (modalTitle && tabTitles[policyKey]) {
+      modalTitle.textContent = tabTitles[policyKey];
+    }
+  }
+
+  modalTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const policy = btn.dataset.policy;
+      if (policy) switchTab(policy);
+    });
+  });
+
+  closeModalBtn?.addEventListener('click', closeLegalModal);
+  modalFooterClose?.addEventListener('click', closeLegalModal);
+
+  legalModal?.addEventListener('click', (e) => {
+    if (e.target === legalModal) {
+      closeLegalModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && legalModal?.classList.contains('is-open')) {
+      closeLegalModal();
+    }
+  });
+
+  // Bind to any link with class 'open-legal-trigger' or href matching policies
+  document.querySelectorAll('[data-legal-trigger]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const policy = trigger.getAttribute('data-legal-trigger') || 'terms';
+      openLegalModal(policy);
+    });
+  });
+</script>

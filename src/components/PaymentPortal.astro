@@ -1,0 +1,373 @@
+---
+import businessConfig from '../data/business-config.json';
+---
+
+<section class="payment-section" id="pay-invoice">
+  <div class="container">
+    <div class="payment-grid">
+      <!-- Left Info Box -->
+      <div class="payment-info-col">
+        <div class="pill-badge pill-teal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span>Stripe-Secured Gateway</span>
+        </div>
+
+        <h2 class="section-title">Online Invoice Payment</h2>
+
+        <p class="section-body">
+          Have an open invoice? Enter your invoice number below to complete your payment securely via Stripe.
+        </p>
+
+        <div class="compliance-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="highlight-text">
+              <h4>Bank-Grade Encryption</h4>
+              <p>Every transaction is protected with TLS 1.3, 256-bit encryption and strict tokenization.</p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+            </div>
+            <div class="highlight-text">
+              <h4>PCI-DSS Level 1 Certified</h4>
+              <p>Card data is never stored on our local servers. Payments are handled entirely by Stripe.</p>
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="highlight-text">
+              <h4>Instant Digital Receipt</h4>
+              <p>An official itemized receipt is dispatched automatically to your billing email address.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accepted-cards-box">
+          <span class="accepted-cards-title">Accepted Payment Methods</span>
+          <div class="cards-badges-row">
+            <span class="card-badge">Visa</span>
+            <span class="card-badge">Mastercard</span>
+            <span class="card-badge">Amex</span>
+            <span class="card-badge">Discover</span>
+            <span class="card-badge">Apple Pay</span>
+            <span class="card-badge">Google Pay</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Interactive Payment Form -->
+      <div class="payment-card-col">
+        <div class="portal-card">
+          <div class="portal-card-header">
+            <div class="portal-header-title">
+              <span class="portal-kicker">Client Billing Portal</span>
+              <h3>Secure Checkout Form</h3>
+            </div>
+            <div class="stripe-badge-indicator">
+              <svg width="40" height="20" viewBox="0 0 60 25" fill="#635bff">
+                <path d="M59.64 14.28c0-4.43-2.16-7.85-6.28-7.85-4.14 0-6.66 3.42-6.66 7.82 0 5.2 3.06 7.75 7.19 7.75 2.02 0 3.56-.47 4.7-1.12v-3.23c-1.14.6-2.42.94-3.92.94-1.63 0-3.09-.64-3.28-2.61h8.22c0-.3.03-1.16.03-1.7zm-8.22-1.57c0-1.77 1.07-2.49 2.14-2.49 1.05 0 2.08.72 2.08 2.49h-4.22zm-9.35-6.28c-1.67 0-2.73.78-3.32 1.34l-.21-1.07h-3.85v20.44l4.24-.9.01-4.78c.61.48 1.55 1.09 3.08 1.09 3.12 0 5.99-2.52 5.99-8.06 0-5.18-2.81-8.06-5.94-8.06zm-1.04 12.54c-1.03 0-1.65-.37-2.08-.85l-.03-6.63c.47-.53 1.13-.88 2.11-.88 1.63 0 2.76 1.54 2.76 4.17 0 2.68-1.12 4.19-2.76 4.19zm-13.88-5.74l-.27-1.02h-3.81v12.2h4.22v-8.2c1.03-1.34 2.76-1.1 3.32-.91v-3.79c-.61-.22-2.43-.53-3.46 1.72zm-7.6-6.52c-1.36 0-2.26.96-2.26 2.15 0 1.22.9 2.15 2.26 2.15s2.26-.93 2.26-2.15c0-1.19-.9-2.15-2.26-2.15zm-2.11 4.79h4.22v12.2H17.44V11.5zm-5.72 3.14c0-2.07-1.63-2.68-3.41-3.21-1.22-.36-1.56-.7-1.56-1.19 0-.5.48-.9 1.42-.9 1.3 0 2.75.46 3.96 1.18v-3.56c-1.28-.53-2.67-.78-3.96-.78-3.37 0-5.63 1.76-5.63 4.67 0 3.63 4.97 3.03 4.97 4.6 0 .59-.53.94-1.55.94-1.53 0-3.23-.66-4.57-1.47v3.65c1.47.66 3.08.97 4.57.97 3.48 0 5.76-1.74 5.76-4.84z"/>
+              </svg>
+            </div>
+          </div>
+
+          <form id="invoice-payment-form" class="invoice-form" novalidate>
+            <!-- Invoice Number -->
+            <div class="form-group">
+              <label for="invoice-num" class="form-label">
+                <span>Invoice Number</span>
+                <span class="required-star">*</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-prefix-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="9" x2="20" y2="9"/>
+                    <line x1="4" y1="15" x2="20" y2="15"/>
+                    <line x1="10" y1="3" x2="8" y2="21"/>
+                    <line x1="16" y1="3" x2="14" y2="21"/>
+                  </svg>
+                </span>
+                <input 
+                  type="text" 
+                  id="invoice-num" 
+                  name="invoiceNumber" 
+                  class="form-input" 
+                  placeholder="e.g. INV-2026-0412" 
+                  required
+                />
+              </div>
+              <span class="field-hint">Located at the top-right corner of your PDF statement</span>
+            </div>
+
+            <!-- Client Email -->
+            <div class="form-group">
+              <label for="client-email" class="form-label">
+                <span>Client Email Address</span>
+                <span class="required-star">*</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-prefix-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </span>
+                <input 
+                  type="email" 
+                  id="client-email" 
+                  name="clientEmail" 
+                  class="form-input" 
+                  placeholder="billing@yourcompany.com" 
+                  required
+                />
+              </div>
+              <span class="field-hint">Your receipt and payment confirmation will be sent here</span>
+            </div>
+
+            <!-- Payment Amount ($ USD) -->
+            <div class="form-group">
+              <label for="payment-amount" class="form-label">
+                <span>Payment Amount ($ USD)</span>
+                <span class="required-star">*</span>
+              </label>
+              <div class="input-wrapper amount-wrapper">
+                <span class="amount-currency">$</span>
+                <input 
+                  type="number" 
+                  id="payment-amount" 
+                  name="paymentAmount" 
+                  class="form-input amount-input" 
+                  placeholder="0.00" 
+                  step="0.01" 
+                  min="1"
+                  required
+                />
+                <span class="amount-suffix">USD</span>
+              </div>
+              <span class="field-hint">Enter the exact invoice total or agreed milestone amount</span>
+            </div>
+
+            <!-- Memo / Notes (Optional) -->
+            <div class="form-group">
+              <label for="payment-memo" class="form-label">
+                <span>Project / Company Note</span>
+                <span class="optional-tag">(Optional)</span>
+              </label>
+              <input 
+                type="text" 
+                id="payment-memo" 
+                name="paymentMemo" 
+                class="form-input" 
+                placeholder="e.g. Phase 1 Milestone or Site Location" 
+              />
+            </div>
+
+            <!-- Order Summary Live Box -->
+            <div class="order-summary-box">
+              <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="summary-subtotal">$0.00 USD</span>
+              </div>
+              <div class="summary-line">
+                <span>Processing & Platform Fee</span>
+                <span class="free-badge">Waived ($0.00)</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-line total-line">
+                <span>Total Due</span>
+                <span id="summary-total" class="total-number">$0.00 USD</span>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="btn-submit-payment" class="btn-proceed-checkout">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <span>Proceed to Secure Checkout</span>
+            </button>
+
+            <div class="form-footer-security">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Payments processed via <strong>Stripe</strong>. Encrypted 256-Bit SSL Connection.</span>
+            </div>
+          </form>
+
+          <!-- Success / Checkout Modal Triggered State -->
+          <div id="checkout-state-dialog" class="checkout-dialog-hidden">
+            <div class="checkout-dialog-card">
+              <div class="dialog-icon-circle">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <h3>Invoice Ready For Checkout</h3>
+              <p class="dialog-msg">Your transaction session has been verified with <strong>OmniServ Operations LLC</strong>.</p>
+              
+              <div class="receipt-preview-table">
+                <div class="table-row">
+                  <span class="label">Invoice Number:</span>
+                  <span id="dialog-inv" class="val font-mono">--</span>
+                </div>
+                <div class="table-row">
+                  <span class="label">Client Email:</span>
+                  <span id="dialog-email" class="val">--</span>
+                </div>
+                <div class="table-row">
+                  <span class="label">Amount:</span>
+                  <span id="dialog-amount" class="val font-bold text-teal">--</span>
+                </div>
+                <div class="table-row">
+                  <span class="label">Payee:</span>
+                  <span class="val">{businessConfig.legalName}</span>
+                </div>
+              </div>
+
+              <div class="stripe-instruction-box">
+                <div class="stripe-instruction-header">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                  </svg>
+                  <span>Stripe Hosted Payment Flow</span>
+                </div>
+                <p>You are now connected to the secure Stripe Checkout gateway. To confirm your payment, click the button below to initiate card processing or direct ACH settlement.</p>
+              </div>
+
+              <div class="dialog-actions">
+                <button type="button" id="btn-confirm-stripe" class="btn-confirm-stripe">
+                  <span>Pay Now With Stripe</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+                <button type="button" id="btn-cancel-dialog" class="btn-cancel-dialog">Edit Details</button>
+              </div>
+
+              <div id="stripe-simulated-success" class="stripe-simulated-success hidden">
+                <div class="success-banner">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  <span>Payment Session Authorized</span>
+                </div>
+                <p class="success-text">Your invoice confirmation and Stripe transaction receipt will be sent directly to your email address. If you need any assistance with this transaction, reach us at <a href={`mailto:${businessConfig.email}`}>{businessConfig.email}</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const paymentInput = document.getElementById('payment-amount');
+  const subtotalDisplay = document.getElementById('summary-subtotal');
+  const totalDisplay = document.getElementById('summary-total');
+  const paymentForm = document.getElementById('invoice-payment-form');
+  const checkoutDialog = document.getElementById('checkout-state-dialog');
+  const btnCancelDialog = document.getElementById('btn-cancel-dialog');
+  const btnConfirmStripe = document.getElementById('btn-confirm-stripe');
+  const stripeSuccess = document.getElementById('stripe-simulated-success');
+
+  const dialogInv = document.getElementById('dialog-inv');
+  const dialogEmail = document.getElementById('dialog-email');
+  const dialogAmount = document.getElementById('dialog-amount');
+
+  function formatCurrency(val) {
+    const num = parseFloat(val);
+    if (isNaN(num) || num < 0) return '$0.00 USD';
+    return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' USD';
+  }
+
+  paymentInput?.addEventListener('input', (e) => {
+    const formatted = formatCurrency(e.target.value);
+    if (subtotalDisplay) subtotalDisplay.textContent = formatted;
+    if (totalDisplay) totalDisplay.textContent = formatted;
+  });
+
+  paymentForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const invInput = document.getElementById('invoice-num');
+    const emailInput = document.getElementById('client-email');
+    const amountVal = parseFloat(paymentInput?.value || '0');
+
+    if (!invInput?.value.trim()) {
+      alert('Please enter your Invoice Number.');
+      invInput?.focus();
+      return;
+    }
+
+    if (!emailInput?.value.trim() || !emailInput.value.includes('@')) {
+      alert('Please provide a valid client billing email address.');
+      emailInput?.focus();
+      return;
+    }
+
+    if (isNaN(amountVal) || amountVal <= 0) {
+      alert('Please enter a valid payment amount greater than $0.00 USD.');
+      paymentInput?.focus();
+      return;
+    }
+
+    // Populate Dialog
+    if (dialogInv) dialogInv.textContent = invInput.value.trim().toUpperCase();
+    if (dialogEmail) dialogEmail.textContent = emailInput.value.trim();
+    if (dialogAmount) dialogAmount.textContent = formatCurrency(amountVal);
+
+    if (checkoutDialog) {
+      checkoutDialog.classList.remove('checkout-dialog-hidden');
+      checkoutDialog.classList.add('checkout-dialog-visible');
+    }
+  });
+
+  btnCancelDialog?.addEventListener('click', () => {
+    if (checkoutDialog) {
+      checkoutDialog.classList.remove('checkout-dialog-visible');
+      checkoutDialog.classList.add('checkout-dialog-hidden');
+    }
+    if (stripeSuccess) {
+      stripeSuccess.classList.add('hidden');
+    }
+  });
+
+  btnConfirmStripe?.addEventListener('click', () => {
+    btnConfirmStripe.disabled = true;
+    btnConfirmStripe.innerHTML = 'Connecting to Stripe Secure Gateway...';
+    setTimeout(() => {
+      if (stripeSuccess) {
+        stripeSuccess.classList.remove('hidden');
+      }
+      btnConfirmStripe.innerHTML = 'Payment Gateway Verified';
+      btnConfirmStripe.classList.add('btn-verified');
+    }, 1200);
+  });
+</script>

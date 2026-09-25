@@ -1,0 +1,128 @@
+---
+import businessConfig from '../data/business-config.json';
+---
+
+<footer class="site-footer" id="footer">
+  <div class="container footer-top-row">
+    <!-- Brand / Legal Info -->
+    <div class="footer-col-main">
+      <div class="footer-brand-header">
+        <div class="logo-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.2" stroke-dasharray="32 10" />
+            <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+            <path d="M8.5 12h7M12 8.5v7" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="footer-brand-name">OmniServ Management</span>
+      </div>
+
+      <p class="footer-desc">
+        Professional contract management, operational execution, and centralized client billing for digital technologies and field operations.
+      </p>
+
+      <div class="footer-gateway-disclosure">
+        <div class="disclosure-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span>PCI-DSS Level 1 & Stripe Verified</span>
+        </div>
+        <p class="disclosure-text">
+          Transactions are processed securely through Stripe. Full card details are encrypted and never stored on OmniServ servers.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="footer-col-nav">
+      <h4 class="footer-heading">Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#how-it-works">How We Work</a></li>
+        <li><a href="#pay-invoice">Pay an Invoice</a></li>
+        <li><a href="#policies">Policies & Guarantees</a></li>
+        <li><a href="#contact">Contact Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Mandatory Merchant Entity Details -->
+    <div class="footer-col-entity">
+      <h4 class="footer-heading">Entity & Governance</h4>
+      <ul class="entity-list">
+        <li>
+          <span class="entity-label">Legal Business Name:</span>
+          <span class="entity-value">{businessConfig.legalName}</span>
+        </li>
+        <li>
+          <span class="entity-label">Operating As:</span>
+          <span class="entity-value">{businessConfig.operatingAs}</span>
+        </li>
+        <li>
+          <span class="entity-label">Business Address:</span>
+          <address class="entity-address">
+            {businessConfig.address}
+          </address>
+        </li>
+        <li>
+          <span class="entity-label">Jurisdiction:</span>
+          <span class="entity-value">State of California, USA</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Customer Support Column -->
+    <div class="footer-col-support">
+      <h4 class="footer-heading">Customer Support</h4>
+      <p class="support-intro">Direct assistance for invoice disputes, milestone updates, and contract administration.</p>
+      
+      <div class="support-contact-cards">
+        <a href={`tel:${businessConfig.phoneRaw}`} class="support-contact-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <span class="pill-label">Phone Support</span>
+            <span class="pill-val">{businessConfig.phone}</span>
+          </div>
+        </a>
+
+        <a href={`mailto:${businessConfig.email}`} class="support-contact-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <div>
+            <span class="pill-label">Email Inquiries</span>
+            <span class="pill-val">{businessConfig.email}</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="support-hours">
+        <span>Hours: {businessConfig.hours}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mandatory Legal Policies Row (Stripe & Card Brands Compliant) -->
+  <div class="footer-legal-bar">
+    <div class="container legal-bar-inner">
+      <div class="copyright-text">
+        © {new Date().getFullYear()} {businessConfig.legalName}. Operating as <strong>{businessConfig.operatingAs}</strong>. All rights reserved.
+      </div>
+
+      <nav class="legal-nav" aria-label="Legal and Compliance Links">
+        <a href="#terms" data-legal-trigger="terms" class="legal-link">Terms of Service</a>
+        <span class="legal-dot">•</span>
+        <a href="#privacy" data-legal-trigger="privacy" class="legal-link">Privacy Policy</a>
+        <span class="legal-dot">•</span>
+        <a href="#refund" data-legal-trigger="refund" class="legal-link">Refund Policy</a>
+        <span class="legal-dot">•</span>
+        <a href="#checkout" data-legal-trigger="checkout" class="legal-link">Secure Checkout Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
